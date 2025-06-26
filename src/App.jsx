@@ -1,13 +1,12 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom'
 import SignInPage from './page/SignIn'
 import DashboardPage from './page/DashboardPage'
 
 function App() {
-
+  const navigate = useNavigate();
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Navigate to="/login" replace />} />
         <Route path="/login" element={<SignInPage />} />
         <Route path="/dashboard" element={<DashboardPage />} />
       </Routes>
@@ -15,4 +14,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
